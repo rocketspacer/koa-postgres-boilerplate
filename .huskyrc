@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "npm-run-all lint test",
+    "pre-push": "npm-run-all lint test"
+  }
+}
