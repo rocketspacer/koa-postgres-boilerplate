@@ -1,5 +1,5 @@
 {
-  "name": "sb-homework",
+  "name": "shopback-code-challenge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "author": "Tuan Nguyen <me@nmtuan.space>",
   "license": "ISC",
   "dependencies": {
-    "argon2": "^0.20.0",
+    "bcryptjs": "^2.4.3",
     "convict": "^4.4.1",
     "joi": "^14.3.0",
     "js-yaml": "^3.12.0",

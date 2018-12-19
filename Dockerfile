@@ -1,11 +1,10 @@
 FROM node:10
 
-RUN apt-get update && apt-get install --yes \
-  python2.7 \
-  python-pip
+RUN apt-get update && npm install --global knex
 
 WORKDIR /usr/src/app
-COPY package*.json .
+COPY package.json .
+COPY package-lock.json .
 RUN npm install --production
 COPY . .
 

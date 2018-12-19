@@ -1,6 +1,9 @@
 // Dependencies
 const shortid = require('shortid');
-const argon2 = require('argon2');
+const bcrypt = require('bcryptjs');
+
+// Constants
+const SALT_ROUNDS = 10;
 
 // Relationships
 const { Model: { ManyToManyRelation } } = require('objection');
@@ -48,11 +51,11 @@ class User extends BaseModel {
   }
 
   async verifyPassword(password) {
-    return argon2.verify(this.password_hash, password);
+    return bcrypt.compare(password, this.password_hash);
   }
 
   static async getPasswordHash(password) {
-    return argon2.hash(password);
+    return bcrypt.hash(password, SALT_ROUNDS);
   }
 
   $beforeInsert() {
