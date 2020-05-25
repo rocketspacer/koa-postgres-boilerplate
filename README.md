@@ -1,4 +1,4 @@
-# shopback-code-challenge
+# Koa Postgres Boilerplate
 
 ## Installation
 
